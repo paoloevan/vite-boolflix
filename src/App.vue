@@ -20,9 +20,9 @@ export default {
     <input v-model="store.query" type="search" placeholder="Digita film">
     <button @click="this.store.callApi()">Cerca</button>
     <ul>
-      <div v-for="film in store.searchFilm">
+      <template v-for="film in store.searchFilm">
         <li v-if="film.media_type !== 'person'">
-
+          <img :src="store.API_image + film.poster_path" :alt="film.title + film.name">
           Titolo: {{ film.name }} {{ film.title }},
           Titolo
           originale: {{
@@ -40,9 +40,8 @@ export default {
             }}</span>,
           voto: {{ film.vote_average }}
 
-          <!-- <div v-if="film.media_type == 'person'">OOOOOOOOOOOOOOOOOOO</div> -->
         </li>
-      </div>
+      </template>
 
     </ul>
   </div>
