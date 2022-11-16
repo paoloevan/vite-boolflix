@@ -13,6 +13,7 @@ export const store = reactive({
             .then(response => {
                 this.searchFilm = response.data.results
             })
+
     }
 }
 )
