@@ -37,8 +37,7 @@ export default {
           </span> <span
             v-if="film.original_language !== 'en' && film.original_language !== 'it' && film.original_language !== 'es'">{{
                 film.original_language
-            }}</span>,
-          voto: {{ store.convertRating(film.vote_average) }}
+            }}</span>
           <div v-for="n in store.convertRating(film.vote_average)"><i class="fa-solid fa-star"></i></div>
           <div v-for="n in 5 - store.convertRating(film.vote_average)"><i class="fa-regular fa-star"></i></div>
 
