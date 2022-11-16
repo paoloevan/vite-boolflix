@@ -1,9 +1,12 @@
 <script>
 import { store } from './store.js'
 
+
 export default {
   name: 'App',
-  components: store,
+  components: {
+    store
+  },
   data() {
     return {
       store
@@ -13,13 +16,18 @@ export default {
 </script>
 
 <template>
+  <country-flag country='it' size='big' />
+  <country-flag country='hr' size='normal' />
+  <country-flag country='fr' size='small' />
+  <country-flag country='rus' />
   <div class="search">
     <input v-model="store.query" type="search" placeholder="Digita film">
     <button @click="this.store.callApi()">Cerca</button>
     <ul>
       <li v-for="film in store.searchFilm">Titolo: {{ film.title }}, Titolo originale: {{ film.original_title }}, lingua
         originale: {{ film.original_language }},
-        voto: {{ film.vote_average }}</li>
+        voto: {{ film.vote_average }}
+      </li>
     </ul>
   </div>
 </template>
