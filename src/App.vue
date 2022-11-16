@@ -38,7 +38,7 @@ export default {
             v-if="film.original_language !== 'en' && film.original_language !== 'it' && film.original_language !== 'es'">{{
                 film.original_language
             }}</span>,
-          voto: {{ film.vote_average }}
+          voto: {{ store.convertRating(film.vote_average) }}
 
         </li>
       </template>

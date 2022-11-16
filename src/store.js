@@ -16,6 +16,11 @@ export const store = reactive({
                 console.log(response.data.results[0].poster_path);
             })
 
+    },
+    convertRating(number) {
+        const newNumber = number / 2
+        const newrating = Math.ceil(newNumber)
+        return newrating
     }
 }
 )
