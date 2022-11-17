@@ -13,7 +13,7 @@ export default {
 
 <template>
     <div class="search text-center py-2">
-        <input @keyup.enter="this.store.callApi()" v-model="this.store.query" type="search"
+        <input @keyup.enter="this.store.callApi()" v-model="this.store.config.params.query" type="search"
             placeholder="Cerca film o serie">
         <button @click="this.store.callApi()">Go
         </button>
