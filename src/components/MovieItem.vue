@@ -21,7 +21,9 @@ export default {
 
     <div class="col position-relative mb-2 text-center" v-if="movie.media_type !== 'person'">
         <!-- immagine -->
-        <img class="poster" :src="store.API_image + movie.poster_path" :alt="movie.title + movie.name">
+        <img v-if="movie.poster_path" class="poster" :src="store.API_image + movie.poster_path"
+            :alt="movie.title + movie.name">
+        <img v-else src="../../public/not_ava.jpg" alt="">
         <!-- decrizione  -->
         <div class="description position-absolute text-start top-0 p-2">
 
