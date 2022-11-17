@@ -12,10 +12,9 @@ export default {
 </script>
 
 <template>
-    <div class="search">
-        <input @keyup.enter="this.store.callApi()" v-model="store.query" type="search" placeholder="Digita film">
-        <button @click="this.store.callApi()">Cerca</button>
-    </div>
+
+
+
     <ul>
         <template v-for="film in store.searchFilm">
             <!-- film item -->
