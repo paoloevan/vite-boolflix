@@ -24,6 +24,7 @@ export default {
         <img class="poster" :src="store.API_image + movie.poster_path" :alt="movie.title + movie.name">
         <!-- decrizione  -->
         <div class="description position-absolute text-start top-0 p-2">
+
             <div class="title">
                 <strong>Titolo: </strong>{{ movie.name }} {{ movie.title }}
             </div>
@@ -60,6 +61,11 @@ export default {
                 </div>
             </div>
 
+            <div class="overview">
+                <strong>Overview: </strong>{{ movie.overview }} {{ movie.overview }}
+
+            </div>
+
         </div>
 
     </div>
@@ -72,6 +78,7 @@ export default {
 .col {
     &:hover {
         border: 1px solid red;
+        overflow: hidden;
     }
 
     &:hover .description {
@@ -84,6 +91,8 @@ export default {
 
     .description {
         display: none;
+        font-size: 0.75rem;
+        font-weight: 200;
     }
 
 
