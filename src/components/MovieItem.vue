@@ -76,6 +76,8 @@ export default {
 
 <style lang="scss" scoped>
 .col {
+    border: 1px solid transparent;
+
     &:hover {
         border: 1px solid red;
         overflow: hidden;
@@ -102,9 +104,11 @@ export default {
 
     .poster {
         height: 300px;
+        width: 100%;
 
         img {
             object-fit: cover;
+            width: 100%;
         }
     }
 }
