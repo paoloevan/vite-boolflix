@@ -10,20 +10,24 @@ export const store = reactive({
             query: ''
         }
     },
+
     API_image: 'https://image.tmdb.org/t/p/w342',
     searchFilm: '',
     error: false,
+    loadingText: false,
 
     callApi() {
-        axios(this.config)
-            .then(response => {
-                this.searchFilm = response.data.results
-                console.log(response.data.results[0].poster_path);
-            })
-            .catch(err => {
-                console.log(err.message);
-            })
+        this.loadingText = true,
+            axios(this.config)
+                .then(response => {
+                    this.searchFilm = response.data.results
+                    console.log(response.data.results[0].poster_path);
+                })
+                .catch(err => {
+                    console.log(err.message);
+                })
         this.query = ''
+        this.loadingText = false
     },
     convertRating(number) {
         const newNumber = number / 2
