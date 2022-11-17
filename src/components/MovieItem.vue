@@ -93,6 +93,10 @@ export default {
         display: none;
         font-size: 0.75rem;
         font-weight: 200;
+
+        .language img {
+            filter: opacity(100%);
+        }
     }
 
 
@@ -100,9 +104,7 @@ export default {
         height: 300px;
 
         img {
-
             object-fit: cover;
-
         }
     }
 }
