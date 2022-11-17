@@ -23,6 +23,7 @@ export default {
 <style lang="scss" scoped>
 .search {
     input {
+        color: white;
         background-color: rgb(75, 75, 75);
         border: none;
         border-radius: 20px;
