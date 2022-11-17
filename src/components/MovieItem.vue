@@ -19,9 +19,11 @@ export default {
 
     <!-- movie item -->
 
-    <div class="col" v-if="movie.media_type !== 'person'">
+    <div class="col position-relative mb-2 text-center" v-if="movie.media_type !== 'person'">
+        <!-- immagine -->
         <img class="poster" :src="store.API_image + movie.poster_path" :alt="movie.title + movie.name">
-        <div class="description">
+        <!-- decrizione  -->
+        <div class="description position-absolute text-start top-0 p-2">
             <div class="title">
                 <strong>Titolo: </strong>{{ movie.name }} {{ movie.title }}
             </div>
@@ -68,10 +70,31 @@ export default {
 
 <style lang="scss" scoped>
 .col {
+    &:hover {
+        border: 1px solid red;
+    }
+
+    &:hover .description {
+        display: block;
+    }
+
+    &:hover img {
+        filter: opacity(5%);
+    }
+
+    .description {
+        display: none;
+    }
 
 
     .poster {
         height: 300px;
+
+        img {
+
+            object-fit: cover;
+
+        }
     }
 }
 </style>
