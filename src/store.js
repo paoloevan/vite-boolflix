@@ -15,7 +15,7 @@ export const store = reactive({
                 this.searchFilm = response.data.results
                 console.log(response.data.results[0].poster_path);
             })
-
+        this.query = ''
     },
     convertRating(number) {
         const newNumber = number / 2
