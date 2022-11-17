@@ -38,7 +38,7 @@ export default {
             <div class="language">
                 <strong>Lingua: </strong>
                 <span>
-                    <!-- bandierina lingue -->
+                    <!-- bandierina lingue  TODO FARE FUNZIONE-->
                     <img width="20"
                         :src="movie.original_language === 'en' ? '../public/Flag_of_the_United_Kingdom.svg.png' : ''"
                         alt="">
@@ -55,8 +55,8 @@ export default {
                     }}</span>
             </div>
 
+            <!-- stelline voto -->
             <div class="rating d-flex">
-                <!-- stelline voto -->
                 <strong class="me-1">Voto: </strong>
                 <div v-for="n in store.convertRating(movie.vote_average)"><i class="fa-solid fa-star"></i></div>
                 <div v-for="n in 5 - store.convertRating(movie.vote_average)"><i class="fa-regular fa-star"></i>
@@ -108,10 +108,6 @@ export default {
         height: 300px;
         width: 100%;
 
-        img {
-            object-fit: cover;
-            width: 100%;
-        }
     }
 }
 </style>
