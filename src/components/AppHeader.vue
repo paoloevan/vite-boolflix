@@ -24,6 +24,7 @@ export default {
 <style lang="scss" scoped>
 header {
     h1 {
+        font-size: 6rem;
         color: red;
         font-weight: 700;
     }

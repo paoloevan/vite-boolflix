@@ -12,8 +12,30 @@ export default {
 </script>
 
 <template>
-    <div class="search">
-        <input @keyup.enter="this.store.callApi()" v-model="this.store.query" type="search" placeholder="Digita film">
-        <button @click="this.store.callApi()">Cerca</button>
+    <div class="search text-center py-2">
+        <input @keyup.enter="this.store.callApi()" v-model="this.store.query" type="search"
+            placeholder="Cerca film o serie">
+        <button @click="this.store.callApi()">Go
+        </button>
     </div>
 </template>
+
+<style lang="scss" scoped>
+.search {
+    input {
+        background-color: rgb(75, 75, 75);
+        border: none;
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+        margin-right: 1rem;
+    }
+
+    button {
+        background-color: rgb(75, 75, 75);
+        color: gray;
+        border: none;
+        border-radius: 30px;
+        padding: 0.5rem;
+    }
+}
+</style>
