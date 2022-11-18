@@ -15,6 +15,7 @@ export const store = reactive({
     searchFilm: '',
     error: false,
     noFound: false,
+    availableLang: ['it', 'en', 'es', 'fr'],
 
     callApi() {
         this.loadingText = true,
@@ -25,7 +26,6 @@ export const store = reactive({
                         this.noFound = true
                     } else {
                         this.noFound = false
-
                     }
                 })
                 .catch(err => {
@@ -37,6 +37,26 @@ export const store = reactive({
         const newNumber = number / 2
         const newrating = Math.ceil(newNumber)
         return newrating
+    },
+    languagueFlag(language) {
+        if (this.availableLang.includes(language)) {
+            return true
+        } else {
+            return false
+        }
+    },
+    selectFlag(language) {
+        if (language === 'it') {
+            return 'Flag_of_Italy.svg.png'
+        } else if (language === 'en') {
+            return 'Flag_of_the_United_Kingdom.svg.png'
+
+        } else if (language === 'es') {
+            return 'Flag_of_Spain.svg.png'
+
+        } else if (language === 'fr') {
+            return 'Flag_of_France.svg.png'
+        }
     }
 }
 )
