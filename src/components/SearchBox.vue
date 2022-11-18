@@ -35,8 +35,10 @@ export default {
         background-color: rgb(75, 75, 75);
         color: gray;
         border: none;
-        border-radius: 30px;
+        width: 46px;
         padding: 0.5rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
     }
 }
 </style>
