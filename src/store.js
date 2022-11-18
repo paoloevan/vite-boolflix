@@ -14,20 +14,24 @@ export const store = reactive({
     API_image: 'https://image.tmdb.org/t/p/w342',
     searchFilm: '',
     error: false,
-    loadingText: false,
+    noFound: false,
 
     callApi() {
         this.loadingText = true,
             axios(this.config)
                 .then(response => {
                     this.searchFilm = response.data.results
-                    console.log(response.data.results[0].poster_path);
+                    if (this.searchFilm.length === 0) {
+                        this.noFound = true
+                    } else {
+                        this.noFound = false
+
+                    }
                 })
                 .catch(err => {
                     console.log(err.message);
                 })
-        this.query = ''
-        this.loadingText = false
+        this.config.params.query = ''
     },
     convertRating(number) {
         const newNumber = number / 2

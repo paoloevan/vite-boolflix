@@ -38,7 +38,6 @@ export default {
             <div class="language">
                 <strong>Lingua: </strong>
                 <span>
-                    <!-- bandierina lingue  TODO FARE FUNZIONE-->
                     <img width="20"
                         :src="movie.original_language === 'en' ? '../public/Flag_of_the_United_Kingdom.svg.png' : ''"
                         alt="">
