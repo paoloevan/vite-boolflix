@@ -23,9 +23,9 @@ export default {
 
             <div class="row row-cols-6 justify-content-center align-items-start g-1 my-3 py-2">
 
-                <MovieItem v-for="film in store.searchFilm" :movie="film" />
+                <MovieItem v-for="film in this.store.searchFilm" :movie="film" />
 
-                <div v-if="store.noFound" class="not_found">
+                <div v-if="this.store.noFound" class="not_found">
                     Contenuto non torvato :/</div>
             </div>
 
