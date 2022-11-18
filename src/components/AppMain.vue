@@ -21,7 +21,7 @@ export default {
         <div class="container">
 
 
-            <div class="row row-cols-6 justify-content-center align-items-start g-1 my-3 py-2">
+            <div class="row row-cols-5 justify-content-center align-items-start g-1 my-3 py-2 px-5">
 
                 <MovieItem v-for="film in this.store.searchFilm" :movie="film" />
 

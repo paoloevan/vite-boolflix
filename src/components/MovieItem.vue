@@ -23,7 +23,7 @@ export default {
         <!-- immagine -->
         <img v-if="movie.poster_path" class="poster" :src="store.API_image + movie.poster_path"
             :alt="movie.title + movie.name">
-        <img v-else src="../../public/not_ava.jpg" alt="">
+        <img v-else src="../../public/not_ava.jpg" class="poster" alt="">
         <!-- decrizione  -->
         <div class="description position-absolute text-start top-0 p-2">
 
@@ -69,6 +69,7 @@ export default {
 <style lang="scss" scoped>
 .col {
     border: 1px solid transparent;
+    height: 100%;
 
     &:hover {
         border: 1px solid red;
@@ -95,9 +96,9 @@ export default {
 
 
     .poster {
-        height: 300px;
+        height: 350px;
         width: 100%;
-
+        object-fit: cover;
     }
 }
 </style>
